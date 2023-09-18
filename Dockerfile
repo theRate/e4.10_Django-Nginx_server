@@ -10,7 +10,7 @@ RUN pip install psycopg2-binary
 RUN pip install gunicorn
 
 COPY settings.py .
-COPY nginx.conf /etc/nginx/sites-available/default
+COPY default.conf /etc/nginx/conf.d
 
 EXPOSE 80 8000 5432
 CMD service postgresql start && \
